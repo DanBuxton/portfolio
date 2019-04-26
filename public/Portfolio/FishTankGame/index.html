@@ -172,12 +172,12 @@
       function saveWebP() {
         let newWindow = window.open();
         newWindow.document.write("<img src='" +
-          options.canvas.toDataURL("image/png") + "' alt='from canvas'/>");
+          options.canvas.toDataURL("image/WebP") + "' alt='from canvas'/>");
       }
       function savePng() {
         let newWindow = window.open();
         newWindow.document.write("<img src='" +
-          options.canvas.toDataURL("image/webp") + "' alt='from canvas'/>");
+          options.canvas.toDataURL("image/png") + "' alt='from canvas'/>");
         }
     </script>
   </body>
