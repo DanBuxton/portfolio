@@ -1,0 +1,38 @@
+{
+  "total": 6,
+  "level0": {
+    "id": 0,
+    "gridSize": 6,
+    "items": 4
+  },
+  "level1": {
+    "id": 1,
+    "gridSize": 8,
+    "items": 6
+  },
+  "level2": {
+    "id": 2,
+    "gridSize": 10,
+    "items": 8
+  },
+  "level3": {
+    "id": 3,
+    "gridSize": 12,
+    "items": 10
+  },
+  "level4": {
+    "id": 4,
+    "gridSize": 14,
+    "items": 12
+  },
+  "level5": {
+    "id": 5,
+    "gridSize": 16,
+    "items": 14
+  },
+  "level6": {
+    "id": 6,
+    "gridSize": 22,
+    "items": 20
+  }
+}

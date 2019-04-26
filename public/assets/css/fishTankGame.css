@@ -1,0 +1,19 @@
+* {
+  box-sizing: content-box;
+}
+
+#fishTankGameContainer {
+  min-width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#fishTankGameContainer div {
+  display: grid;
+  grid: auto / 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#fishTankGameContainer div>label {
+  text-align: right;
+}

@@ -1,0 +1,53 @@
+@media screen and (max-width: 999px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#secPortfolio {
+  margin: 0 auto;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (min-width: 850px) {
+  .column {
+    width: 25%;
+    /* padding: 0 5px; */
+    padding: 0 10px;
+    
+  }
+
+  .row {
+    margin: 0 auto;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  main {
+    max-width: none;
+    padding: 0 2%;
+  }
+}
+
+.project {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}

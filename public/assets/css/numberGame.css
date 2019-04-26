@@ -1,0 +1,14 @@
+#secNumberGame {
+  border-radius: 20px;
+  margin-top: .5em;
+  padding: .5em 1em 1em 1em;
+}
+
+#secNumberGame p {
+  margin: 0;
+  padding: 1em 0;
+}
+
+#gameInput legend {
+  text-align: left;
+}

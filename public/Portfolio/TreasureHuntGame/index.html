@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>Treasure Hunt Task - Daniel Buxton</title>
+
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+      content="I am a technology enthusiast, and a first year software engineering student at Staffordshire Argumented-Reality. I am fluent in C# and Java programming languages, as well as using basic technologies to create this website form scratch. Additionally, I am a self-taught photographer, which goes hand-in-hand with my extensive software knowledge." />
+    <meta name="keywords" content="Daniel Buxton,Daniel James Buxton,HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Daniel Buxton">
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#1b1b1b" />
+
+    <link rel="icon" href="/assets/images/logo/Logo_White-Black.jpg" />
+
+    <link rel="manifest" href="/manifest.json">
+
+    <noscript>
+      <style>
+        nav {
+          display: block;
+        }
+
+        header#headerMain {
+          position: unset;
+        }
+
+        footer {
+          position: unset;
+        }
+
+        #secTreasureHuntGame {
+          display: none;
+        }
+      </style>
+    </noscript>
+  </head>
+
+  <body>
+    <div id="container">
+      <header id="headerMain">
+        <h1>Daniel Buxton</h1>
+        <img class="db-icon" src="/assets/images/logo/Logo_White.png" width="100px" alt="DB Logo" />
+
+        <nav id="nav">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/Education/">Education</a>
+            </li>
+            <li>
+              <a href="/Portfolio/">Portfolio</a>
+            </li>
+            <li>
+              <a href="/Contact/">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <noscript>
+          <div id="noscriptModal">
+            <h2>JavaScript disabled</h2>
+            <p>Functionality may be affected - Please enable it</p>
+          </div>
+        </noscript>
+
+        <section id="secTreasureHuntGame">
+          <header>
+            <h2>Treasure Hunt Game</h2>
+          </header>
+
+          <aside id="gameHighscores">
+            <h3>Highscores:</h3>
+            <div id="scores"></div>
+          </aside>
+
+          <div id="gameContainer">
+            <div id="game"></div>
+            <div id="controls">
+              <div>
+                <label for="chBasicMulti">Multi-level</label>
+                <input id="chBasicMulti" type="checkbox" />
+              </div>
+              <div id="buttons">
+                <button id="btnStart">Start</button>
+                <button id="btnReset">Reset</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="inner">
+          <div class="socialMediaIcons">
+            <a rel="noreferrer" href="https://github.com/DanBuxton" title="GitHub" target="_blank">
+              <img src="/assets/images/social/github.svg" width="32" height="32" alt="Github" />
+              <span class="u-textScreenReader">Github link</span>
+            </a>
+            <a rel="noreferrer" href="https://www.linkedin.com/in/daniel-buxton-3a8b63140/" title="LinkedIn"
+              target="_blank">
+              <img src="/assets/images/social/linkedin-brands.svg" width="32" height="32" alt="Linkedin"
+                style="border-radius: 12px;" />
+              <span class="u-textScreenReader">LinkedIn link</span>
+            </a>
+            <a href="mailto:dan.buxton99@gmail.com" title="Email" target="_blank">
+              <img src="/assets/images/social/envelope.svg" width="32" height="32" alt="Email" />
+              <span class="u-textScreenReader">Email link</span>
+            </a>
+          </div>
+          <p>Copyright &copy; 2019 Daniel Buxton</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/assets/scripts/global.js"></script>
+    <script src="/assets/scripts/tasks/treasureHuntGame.js"></script>
+    <script>
+      const options = {
+        container: document.getElementById('gameContainer'),
+        highscores: document.getElementById('scores'),
+        startButton: document.getElementById('btnStart'),
+        restartButton: document.getElementById('btnRestart'),
+        game: document.getElementById('game')
+
+      }
+
+      let g = new TreasureHuntGame(options);
+
+      options.startButton.addEventListener('click', g.start);
+
+      //document.getElementById('btnRestart').addEventListener('click', () => { g = new TreasureHuntGame(options) });
+    </script>
+  </body>
+
+</html>

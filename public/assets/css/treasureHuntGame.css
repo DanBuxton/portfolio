@@ -1,0 +1,22 @@
+
+
+@media only screen and (min-width: 700px) {
+  #secTreasureHuntGame {
+    display: -moz-grid;
+    display: grid;
+    grid-template: auto auto / auto auto;
+  }
+
+  #secTreasureHuntGame > header {
+    grid-column: span 2
+  }
+
+  aside#gameHighscores {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  aside#gameHighscores table {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
