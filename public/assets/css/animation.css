@@ -1,0 +1,8 @@
+#slider {
+  width: 800px;
+  height: 600px;
+  display: inline-block;
+}
+.slide {
+  position: relative;
+}
