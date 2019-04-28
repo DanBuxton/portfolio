@@ -6,6 +6,7 @@
     <title>Treasure Hunt Task - Daniel Buxton</title>
 
     <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/treasureHuntGame.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
       content="I am a technology enthusiast, and a first year software engineering student at Staffordshire Argumented-Reality. I am fluent in C# and Java programming languages, as well as using basic technologies to create this website form scratch. Additionally, I am a self-taught photographer, which goes hand-in-hand with my extensive software knowledge." />
@@ -84,17 +85,17 @@
           </aside>
 
           <div id="gameContainer">
-            <div id="game"></div>
             <div id="controls">
               <div>
                 <label for="chBasicMulti">Multi-level</label>
-                <input id="chBasicMulti" type="checkbox" />
+                <input id="cbBasicMulti" type="checkbox" />
               </div>
               <div id="buttons">
                 <button id="btnStart">Start</button>
                 <button id="btnReset">Reset</button>
               </div>
             </div>
+            <div id="game"></div>
           </div>
         </section>
       </main>
@@ -130,13 +131,13 @@
         highscores: document.getElementById('scores'),
         startButton: document.getElementById('btnStart'),
         restartButton: document.getElementById('btnRestart'),
-        game: document.getElementById('game')
-
+        game: document.getElementById('game'),
+        multi: document.getElementById('cbBasicMulti')
       }
 
       let g = new TreasureHuntGame(options);
 
-      options.startButton.addEventListener('click', g.start);
+      document.getElementById('btnStart').addEventListener('click', function () { g.start() });
 
       //document.getElementById('btnRestart').addEventListener('click', () => { g = new TreasureHuntGame(options) });
     </script>

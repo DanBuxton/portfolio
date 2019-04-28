@@ -5,22 +5,9 @@ class TreasureHuntGame {
       this.containerElem = options.container;
       this.scoresElem = options.highscores;
       this.restart = options.restart;
+      this.isMulti = options.multi;
 
-      // const scores = [
-      //   {
-      //     name: 'Daniel Buxton',
-      //     score: 60,
-      //     date: Date()
-      //   },
-      //   {
-      //     name: 'Daniel Buxton',
-      //     score: 55,
-      //     date: Date()
-      //   }
-      // ];
-
-      // localStorage.setItem('scores', JSON.stringify(scores));
-      this.highscores = JSON.parse(localStorage.getItem('scores')); // {}
+      this.highscores = JSON.parse(localStorage.getItem('scores'));
 
       this.outputScores();
     }
@@ -29,21 +16,24 @@ class TreasureHuntGame {
   outputScores() {
     let h = this.highscores;
 
-    let output = '<table><thead><tr><td>Name</td><td>Score</td></tr></thead><tbody>';
-    this.highscores = this.highscores.sort(s => s.score);
-    for (let i = 0; i < h.length; i++) {
-      output += `<tr><td>${h[i].name}</td><td>${h[i].score}</td></tr>`;
-    }
+    let output = '<table><thead><tr><td>Name</td><td>Score</td><td>Date</td></tr></thead><tbody>';
+
+    if (h)
+      for (let i = 0; i < h.length; i++)
+        output += `<tr><td>${h[i].name}</td><td>${h[i].score}</td></tr><td>${new Date(h[i].date).toLocaleDateString()}</td>`;
+    else
+      output += '<tr><td colspan="3">No Data</td></tr>';
+
     output += '</tbody></table>';
 
     this.scoresElem.innerHTML = output;
   }
 
   start() {
-    if (false)
+    if (!this.isMulti.checked)
       this.basicLevel();
     else {
-      let url = '/assets/scripts/games/treasureHuntLevels.json';
+      let url = '/assets/scripts/tasks/treasureHuntLevels.json';
       if ('fetch' in window) {
         console.log('fetch');
         this.fetchData(url);
@@ -89,5 +79,11 @@ class TreasureHuntGame {
         }
       }
     }
+  }
+
+  saveScore(score) {
+    const ob = this.highscores.push({ name: "Dan Buxton", score: score, date: Date() });
+    this.highscores.sort((a, b) => (a.score < b.score) ? 1 : (a.score === b.score) ? ((a.date > b.date) ? 1 : -1) : -1);
+    localStorage.setItem('scores', JSON.stringify(this.highscores));
   }
 }
