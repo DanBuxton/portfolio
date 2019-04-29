@@ -1,3 +1,5 @@
+
+
 //set up cache name and files to add to it
 const CACHE_NAME = 'site-v1';
 const CACHE_URLS = ['/index.html',
@@ -25,6 +27,9 @@ const CACHE_URLS = ['/index.html',
   // IMG
   '/assets/images/CloseUpOfMe.webp',
   '/assets/images/CloseUpOfMe.jpg',
+  '/assets/images/react-logo.svg',
+  '/assets/images/angular-logo.svg',
+  '/assets/images/vue-logo.svg',
   '/assets/images/logo/Logo_White.png',
   '/assets/images/logo/Logo_Black.png',
   '/assets/images/logo/Logo_White-Black.jpg',
@@ -37,6 +42,7 @@ const CACHE_URLS = ['/index.html',
   // JS
   '/assets/scripts/global.js',
   '/assets/scripts/contact.js',
+  '/assets/scripts/modernizr.js',
   '/assets/scripts/tasks/numberGame.js',
   '/assets/scripts/tasks/treasureHuntGame.js',
   '/assets/scripts/tasks/fishTankGame.js',

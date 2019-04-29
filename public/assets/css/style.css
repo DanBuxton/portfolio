@@ -20,26 +20,16 @@
 }
 
 input, textarea {
-  /* 
-  Medium: 16px
-  Large: 18px
-  X-Large: 24px
-    */
-  /* font-size: 18px; */
   font: 18px Arial;
   padding: 5px;
-  height: 100%;
+  width: 100%;
 }
 
 @media only screen and (min-width: 701px) {
   input, textarea {
-    /* 
-    Medium: 16px
-    Large: 18px
-    X-Large: 24px
-     */
-    font: 18px Arial;
-    padding: 2px;
+    font: unset;
+    font-family: Arial;
+    /* padding: 2px; */
   }
 }
 
@@ -52,15 +42,16 @@ input, textarea {
   height: 100%;
 }
 
-noscript {
+.js #noscriptModal {
+  display: none;
+}
+#noscriptModal {
   color: #ff5050;
 }
-
-noscript h3>span {
+#noscriptModal h3>span {
   font-size: medium!important;
 }
-
-noscript nav {
+#noscriptModal nav {
   display: block;
 }
 
@@ -355,8 +346,9 @@ main .socialMediaIcons a {
 /**/
 @media only screen and (min-width: 800px) {
   main {
-    margin: 0 auto;
-    max-width: 885px;
+    /* margin: 0 auto; */
+    /* max-width: 885px; */
+    max-width: 1000px;
   }
 
   table {
@@ -408,15 +400,8 @@ main .socialMediaIcons a {
     grid-column: 1 / span 5;
   }
 
-  /* #secAbout picture {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-  } */
-
   #secAbout>p {
     padding: 0px 50px;
-    /* grid-column: 3 / span 3;
-    grid-row: 2; */
   }
 
   #secEdu thead tr th:nth-child(1),
@@ -429,7 +414,7 @@ input[type="button"], input[type="submit"],
 input[type="reset"], button {
   border: none;
   outline: 0;
-  padding: 8px;
+  padding: 10px;
   color: white;
   background-color: #1b1b1b;
   text-align: center;

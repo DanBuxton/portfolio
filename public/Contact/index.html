@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" class="no-js">
 
   <head>
     <title>Contact - Daniel Buxton</title>
@@ -18,6 +19,8 @@
     <link rel="icon" href="/assets/images/logo/Logo_White-Black.jpg" />
 
     <link rel="manifest" href="/manifest.json">
+
+    <script src="/assets/scripts/modernizr.js"></script>
 
     <link href="/assets/css/contact.css" rel="stylesheet" />
 
@@ -63,19 +66,17 @@
       </header>
 
       <main>
-        <noscript>
-          <div id="noscriptModal">
-            <h2>JavaScript disabled</h2>
-            <p>Functionality may be affected - Please enable it</p>
-          </div>
-        </noscript>
+        <div id="noscriptModal">
+          <h2>JavaScript disabled</h2>
+          <p>Functionality may be affected - Please enable it</p>
+        </div>
 
-        <section id="secContack">
+        <section id="secContact">
           <header>
             <h2>Contact Me</h2>
           </header>
 
-          <p>Feel free to contact me and I will do my bbest to respond</p>
+          <p>Feel free to contact me and I will do my best to respond</p>
 
           <p>Either use the form below or message my <a href="mailto:dan.buxton99@gmail.com" title="Email"
               target="_blank">email <span class="u-textScreenReader">link</span></a></p>
@@ -93,10 +94,10 @@
               </div>
               <div>
                 <label for="txtMessage">Message: </label>
-                <textarea id="txtMessage" value="" placeholder="Message" name="message" required="required"></textarea>
+                <textarea id="txtMessage" value="" placeholder="Message" name="message"></textarea>
               </div>
             </div>
-            <p id="errors"></p>
+            <div id="errors"></div>
             <div class="conItems">
               <input type="submit" value="Submit" />
               <input type="reset" value="Reset" />

@@ -1,3 +1,5 @@
+'use strict';
+
 class TreasureHuntGame {
   constructor(options) {
     if (options) {
@@ -47,7 +49,8 @@ class TreasureHuntGame {
   basicLevel() {
     // 6x6 grid
     this.game.style.gridTemplate = 'repeat(6, 1fr) / repeat(6, 1fr)';
-
+    let grid = [,];
+    grid[1][2] = "";
   }
 
   multiLevel(data) {
