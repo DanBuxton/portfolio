@@ -1,7 +1,7 @@
 'use strict';
 
 //check whether browser support service workers
-/**
+/**/
 if ('serviceWorker' in navigator) {
   //wait until page loaded to avoid delaying rendering
   window.addEventListener('load', function () {
@@ -24,10 +24,14 @@ let footer = document.getElementsByTagName('footer')[0];
 
 let footerHeight;
 
-window.addEventListener('resize', () => {
+window.addEventListener('resize', function () {
   footerHeight = footer.clientHeight;
 
   if (document.body.clientHeight + footerHeight >= window.innerHeight)
     footer.style.top = document.body.clientHeight + 'px';
 });
-window.dispatchEvent(new Event('resize'));
+
+footerHeight = footer.clientHeight;
+
+if (document.body.clientHeight + footerHeight >= window.innerHeight)
+  footer.style.top = document.body.clientHeight + 'px';

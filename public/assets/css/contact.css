@@ -14,3 +14,22 @@
       text-align: right;
   }
 }
+
+#errors {
+  display: none;
+  max-width: 300px;
+  margin: 0 auto;
+  background: #efefef;
+  color: #ff0000;
+  padding: 1em 0.1em;
+  text-align: left;
+  border-radius: 10px;
+}
+
+form {
+  margin-top: 1em;
+}
+
+.error:not(:focus) {
+  border: 1px solid red;
+}

@@ -23,29 +23,13 @@
     <script src="/assets/scripts/modernizr.js"></script>
 
     <link href="/assets/css/contact.css" rel="stylesheet" />
-
-    <noscript>
-      <style>
-        nav {
-          display: block;
-        }
-
-        header#headerMain {
-          position: unset;
-        }
-
-        footer {
-          position: unset;
-        }
-      </style>
-    </noscript>
   </head>
 
   <body>
     <div id="container">
       <header id="headerMain">
         <h1>Daniel Buxton</h1>
-        <img class="db-icon" src="/assets/images/logo/Logo_White.png" width="100px" alt="DB Logo" />
+        <img class="db-icon" src="/assets/images/logo/Logo_White.png" width="100" alt="DB Logo" />
 
         <nav id="nav">
           <ul>
@@ -81,6 +65,7 @@
           <p>Either use the form below or message my <a href="mailto:dan.buxton99@gmail.com" title="Email"
               target="_blank">email <span class="u-textScreenReader">link</span></a></p>
 
+          <div id="errors"></div>
           <form method="GET" action="/Contact/">
             <div class="conItems">
               <div>
@@ -97,9 +82,8 @@
                 <textarea id="txtMessage" value="" placeholder="Message" name="message"></textarea>
               </div>
             </div>
-            <div id="errors"></div>
             <div class="conItems">
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Submit" id="btnSubmit" />
               <input type="reset" value="Reset" />
             </div>
           </form>

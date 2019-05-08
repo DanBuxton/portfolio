@@ -1,37 +1,43 @@
 // 'use strict';
 
 let form = document.getElementsByTagName('form')[0];
-form.addEventListener('submit', validate);
+form.addEventListener('submit', validateForm);
+let btnSub = document.getElementById('btnSubmit');
+btnSub.addEventListener('click', validateForm);
 
-let error;
+let errors = [];
+let results;
 
 const name = document.getElementsByName('name')[0];
 const email = document.getElementsByName('email')[0];
 const message = document.getElementsByName('message')[0];
 
-function validate(e) {
-  let results = [];
+function validateForm(e) {
+  console.log('submit type', e.type == 'submit');
 
-  error = [];
+  results = [];
+  errors = [];
 
   results.push(validateName());
   results.push(validateEmail());
   results.push(validateMessage());
 
-  const result = results.includes(false);
-
-  if (result) {
-    str = '<ul>';
-    error.forEach(e => {
+  if (results.includes(false)) {
+    let str = '<ul>';
+    errors.forEach(e => {
       str += `<li>${e}</li>`
     });
     str += '</ul>';
+
+    document.getElementById('errors').innerHTML = str;
+    document.getElementById('errors').style.display = 'block';
   }
 
-  console.log('errors', error === [] ? error : "None");
-  console.log('result', !result);
+  console.log('errors', results.includes(false) ? errors : "None");
+  console.log('return', !results.includes(false));
 
-  e.returnValue = !result;
+  if (e.type == 'submit')
+    e.returnValue = !results.includes(false);
 }
 
 function validateName() {
@@ -41,7 +47,7 @@ function validateName() {
     if (name.value.length >= 5) {
       res.push(true);
     } else {
-      error.push('Name must have 5 or more characters');
+      errors.push('Name must have 5 or more characters');
       res.push(false);
     }
 
@@ -49,16 +55,17 @@ function validateName() {
     if (reg.test(name)) {
       res.push(true);
     } else {
-      error.push('Name must contain a space and others');
+      errors.push('Name must contain a space and others');
       res.push(false);
     }
   } else {
-    error.push('Name can\'t be empty');
+    errors.push('Name can\'t be empty');
     res.push(false);
   }
 
   return !res.includes(false);
 }
+
 function validateEmail() {
   let res = [];
 
@@ -66,8 +73,7 @@ function validateEmail() {
     if (email.value.length >= 7) {
       res.push(true);
     } else {
-
-      error.push('Email must be 7 characters or more');
+      errors.push('Email must be 7 characters or more');
       res.push(false);
     }
 
@@ -75,26 +81,27 @@ function validateEmail() {
     if (reg.test(email.value)) {
       res.push(true);
     } else {
-      error.push('Email contains an unrecognised pattern');
+      errors.push('Email contains an unrecognised pattern');
       console.log(reg.test(email));
-
       res.push(false);
     }
   } else {
-    error.push('Email can\'t be empty');
+    errors.push('Email can\'t be empty');
     res.push(false);
   }
   return !res.includes(false);
 }
+
 function validateMessage() {
   let res = [];
 
-  if (message.value) {
+  if (!message.value == "") {
     res.push(true);
   } else {
-    error.push('Message can\'t be empty');
+    // message.addAttribrute('class', 'error');
+    errors.push("Message can\'t be empty");
     res.push(false);
   }
 
-  return res.includes(false) == false;
+  return !res.includes(false);
 }

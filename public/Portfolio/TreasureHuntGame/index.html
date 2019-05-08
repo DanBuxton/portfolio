@@ -22,33 +22,13 @@
     <link rel="manifest" href="/manifest.json">
 
     <script src="/assets/scripts/modernizr.js"></script>
-
-    <noscript>
-      <style>
-        nav {
-          display: block;
-        }
-
-        header#headerMain {
-          position: unset;
-        }
-
-        footer {
-          position: unset;
-        }
-
-        #secTreasureHuntGame {
-          display: none;
-        }
-      </style>
-    </noscript>
   </head>
 
   <body>
     <div id="container">
       <header id="headerMain">
         <h1>Daniel Buxton</h1>
-        <img class="db-icon" src="/assets/images/logo/Logo_White.png" width="100px" alt="DB Logo" />
+        <img class="db-icon" src="/assets/images/logo/Logo_White.png" width="100" alt="DB Logo" />
 
         <nav id="nav">
           <ul>
@@ -69,12 +49,10 @@
       </header>
 
       <main>
-        <noscript>
-          <div id="noscriptModal">
-            <h2>JavaScript disabled</h2>
-            <p>Functionality may be affected - Please enable it</p>
-          </div>
-        </noscript>
+        <div id="noscriptModal">
+          <h2>JavaScript disabled</h2>
+          <p>Functionality may be affected - Please enable it</p>
+        </div>
 
         <section id="secTreasureHuntGame">
           <header>
@@ -132,7 +110,7 @@
         container: document.getElementById('gameContainer'),
         highscores: document.getElementById('scores'),
         startButton: document.getElementById('btnStart'),
-        restartButton: document.getElementById('btnRestart'),
+        restartButton: document.getElementById('btnReset'),
         game: document.getElementById('game'),
         multi: document.getElementById('cbBasicMulti')
       }
@@ -141,7 +119,7 @@
 
       document.getElementById('btnStart').addEventListener('click', function () { g.start() });
 
-      //document.getElementById('btnRestart').addEventListener('click', () => { g = new TreasureHuntGame(options) });
+      document.getElementById('btnReset').addEventListener('click', function () { g = new TreasureHuntGame(options) });
     </script>
   </body>
 

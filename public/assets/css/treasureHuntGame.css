@@ -1,5 +1,13 @@
 input[type="checkbox"] {
   height: unset;
+  width: inherit;
+}
+
+#game {
+  display: grid;
+}
+#game .btn {
+  padding: 10% 6px;
 }
 
 @media only screen and (min-width: 600px) {

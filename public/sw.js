@@ -1,4 +1,4 @@
-
+'use strict';
 
 //set up cache name and files to add to it
 const CACHE_NAME = 'site-v1';

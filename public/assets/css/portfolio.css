@@ -1,12 +1,28 @@
-@media screen and (max-width: 999px) {
-  main {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+
 
 #secPortfolio {
   margin: 0 auto;
+}
+
+.project {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.project ul {
+  list-style-type: none;
+  font-weight: bolder;
+  text-align: center;
+
+  padding: 0;
+}
+.project ul li:nth-child(1) {
+  text-decoration: none;
+}
+.project ul li {
+  /* text-decoration: overline; */
 }
 
 .column {
@@ -19,6 +35,13 @@
   content: "";
   display: table;
   clear: both;
+}
+
+@media screen and (max-width: 999px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media screen and (min-width: 850px) {
@@ -43,11 +66,4 @@
     max-width: none;
     padding: 0 2%;
   }
-}
-
-.project {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
 }
