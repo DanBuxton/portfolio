@@ -65,6 +65,7 @@
           </aside>
 
           <div id="gameContainer">
+            <p id="output"></p>
             <div id="controls">
               <div>
                 <label for="chBasicMulti">Multi-level</label>
@@ -112,7 +113,8 @@
         startButton: document.getElementById('btnStart'),
         restartButton: document.getElementById('btnReset'),
         game: document.getElementById('game'),
-        multi: document.getElementById('cbBasicMulti')
+        multi: document.getElementById('cbBasicMulti'),
+        output: document.getElementById('output')
       }
 
       let g = new TreasureHuntGame(options);

@@ -4,12 +4,13 @@ let TreasureHuntGame = function (opt) {
   if (opt) {
     this.game = opt.game;
     this.game.innerHTML = '';
-    this.containerElem = opt.container;
+    // this.containerElem = opt.container;
     this.scoresElem = opt.highscores;
     this.startBtn = opt.startButton;
-    this.restart = opt.restart;
+    // this.restart = opt.restart;
     this.isMulti = opt.multi;
-
+    this.output = opt.output;
+    this.output.innerHTML = '';
     this.grid = [];
     this.found = 0;
     this.wrongGuesses = 0;
@@ -19,6 +20,8 @@ let TreasureHuntGame = function (opt) {
     this.outputScores();
 
     this.startBtn.disabled = false;
+
+    resize();
   }
 };
 
@@ -33,12 +36,14 @@ TreasureHuntGame.prototype.start = function () {
     let url = '/assets/scripts/tasks/treasureHuntLevels.json';
     if ('fetch' in window) {
       console.log('fetch');
-      fetchData(url);
+      this.fetchData(url);
     } else {
       console.log('no fetch - using xml');
-      xmlData(url);
+      this.xmlData(url);
     }
   }
+
+  resize();
 }
 TreasureHuntGame.prototype.outputScores = function () {
   let h = this.highscores;
@@ -62,10 +67,28 @@ TreasureHuntGame.prototype.basicLevel = function () {
   this.initializeGrid(6);
   this.items = 4;
 
-  this.grid[1][1] = 1;
-  this.grid[2][2] = 1;
-  this.grid[3][3] = 1;
-  this.grid[4][4] = 1;
+  let x = this.getRandomNumber();
+  let y = this.getRandomNumber();
+  this.grid[x][y] = 1;
+  console.log('pos', x + ', ' + y);
+
+  x = this.getRandomNumber();
+  y = this.getRandomNumber();
+  this.grid[x][y] = 1;
+  console.log('pos', x + ', ' + y);
+
+  x = this.getRandomNumber();
+  y = this.getRandomNumber();
+  this.grid[x][y] = 1;
+  console.log('pos', x + ', ' + y);
+
+  x = this.getRandomNumber();
+  y = this.getRandomNumber();
+  this.grid[x][y] = 1;
+  console.log('pos', x + ', ' + y);
+}
+TreasureHuntGame.prototype.getRandomNumber = function () {
+  return Math.floor(Math.random() * this.grid.length);
 }
 TreasureHuntGame.prototype.initializeGrid = function (size) {
   let count = 0;
@@ -90,30 +113,40 @@ TreasureHuntGame.prototype.multiLevel = function (data) {
   console.log('data', levelData);
 }
 TreasureHuntGame.prototype.selectedSquare = function (b, i, j) {
+  let result = '';
+
   console.log('selected', b.id);
   console.log('i', i);
   console.log('j', j);
 
+  b.disabled = true;
+  console.log('pos', i + ',' + j);
   if (this.grid[i][j] == '?') {
-    confirm('pos ' + i + ',' + j + '\nYou already looked here');
-    return;
+    console.log('You already looked here');
   } else if (this.grid[i][j] == 0) {
-    confirm('pos ' + i + ',' + j + '\nNot found');
+    result = 'Not found';
     this.wrongGuesses++;
     this.grid[i][j] = '?';
   } else if (this.grid[i][j] == 1) {
-    confirm('pos ' + i + ',' + j + '\nYou found something');
+    result = 'You found something';
     this.found++;
     this.grid[i][j] = '?';
   }
 
   if (this.found == this.items) {
-    confirm('Well done', this.wrongGuesses + ' wrong guesses');
-    return;
+    result = '<p>Well done, ' + this.wrongGuesses + ' wrong guesses</p>';
+    for (let i = 0; i < this.grid.length ** 2; i++) {
+      document.getElementById('btn' + (i + 1)).disabled = true;
+    }
   } else if (this.wrongGuesses >= 15) {
-    confirm('Game over!' + '\nYou didn\'t find all the items');
+    result = '<p>Game over! You didn\'t find all the items</p>';
+    for (let i = 0; i < this.grid.length ** 2; i++) {
+      document.getElementById('btn' + (i + 1)).disabled = true;
+    }
     // show items
   }
+
+  this.output.innerHTML = result;
 }
 TreasureHuntGame.prototype.saveScore = function (score) {
   let name = prompt('Name:');
@@ -128,11 +161,11 @@ TreasureHuntGame.prototype.saveScore = function (score) {
   localStorage.setItem('scores', JSON.stringify(this.highscores));
 }
 
-function fetchData(url) {
+TreasureHuntGame.prototype.fetchData = function (url) {
   fetch(url).then(function (response) { g.multiLevel(response.text()) })
     .catch(function (e) {
       console.log('Error', e);
-    })
+    });
 }
 function xmlData(url) {
   const req = new XMLHttpRequest();

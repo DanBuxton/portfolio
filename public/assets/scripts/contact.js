@@ -24,13 +24,14 @@ function validateForm(e) {
 
   if (results.includes(false)) {
     let str = '<ul>';
-    errors.forEach(e => {
+    errors.forEach(function (e) {
       str += `<li>${e}</li>`
     });
     str += '</ul>';
 
     document.getElementById('errors').innerHTML = str;
     document.getElementById('errors').style.display = 'block';
+    resize();
   }
 
   console.log('errors', results.includes(false) ? errors : "None");
@@ -65,7 +66,6 @@ function validateName() {
 
   return !res.includes(false);
 }
-
 function validateEmail() {
   let res = [];
 
@@ -91,7 +91,6 @@ function validateEmail() {
   }
   return !res.includes(false);
 }
-
 function validateMessage() {
   let res = [];
 
