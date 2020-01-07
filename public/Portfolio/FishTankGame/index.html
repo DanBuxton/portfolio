@@ -2,7 +2,7 @@
 
 <html lang="en" class="no-js">
 
-  <head>
+<head>
     <title>Fish Tank Task - Daniel Buxton</title>
 
     <link href="/assets/css/style.css" rel="stylesheet" />
@@ -21,150 +21,152 @@
     <link rel="manifest" href="/manifest.json">
 
     <script src="/assets/scripts/modernizr.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="container">
-      <header id="headerMain">
-        <h1>Daniel Buxton</h1>
-        <img class="db-icon" src="/assets/images/logo/Logo_White.png" width="100" alt="DB Logo" />
+        <header id="headerMain">
+            <h1>Daniel Buxton</h1>
+            <img class="db-icon" src="/assets/images/logo/Logo_White.png" width="100" alt="DB Logo" />
 
-        <nav id="nav">
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/Education/">Education</a>
-            </li>
-            <li>
-              <a href="/Portfolio/">Portfolio</a>
-            </li>
-            <li>
-              <a href="/Contact/">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Education/">Education</a>
+                    </li>
+                    <li>
+                        <a href="/Portfolio/">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="/Contact/">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-      <main>
-        <div id="noscriptModal">
-          <h2>JavaScript disabled</h2>
-          <p>Functionality may be affected - Please enable it</p>
-        </div>
+        <main>
+            <noscript>
+                <div id="noscriptModal">
+                    <h2>JavaScript disabled</h2>
+                    <p>Functionality may be affected - Please enable it</p>
+                </div>
+            </noscript>
 
-        <section id="fishTankGameContainer">
-          <header>
-            <h2>Children's Fish Tank Game</h2>
-          </header>
+            <section id="fishTankGameContainer">
+                <header>
+                    <h2>Children's Fish Tank Game</h2>
+                </header>
 
-          <canvas id="cDrawing" width="800" height="600"></canvas>
+                <canvas id="cDrawing" width="800" height="600"></canvas>
 
-          <form method="dialog">
-            <fieldset>
-              <button id="btnClear">Clear</button>
-              <button id="btnSavePng">Save .png</button>
-              <button id="btnSaveWebP">Save .WebP</button>
-            </fieldset>
-            <fieldset>
-              <div>
-                <label for="selImage">Image: </label>
-                <select id="selImage">
-                  <option value="Funky">Funky Fish</option>
-                  <option value="Star">Star Fish</option>
-                  <option value="Bubble">Simple Bubble</option>
-                  <option value="Ornament">Ornament</option>
-                </select>
-              </div>
+                <form method="dialog">
+                    <fieldset>
+                        <button id="btnClear">Clear</button>
+                        <button id="btnSavePng">Save .png</button>
+                        <button id="btnSaveWebP">Save .WebP</button>
+                    </fieldset>
+                    <fieldset>
+                        <div>
+                            <label for="selImage">Image: </label>
+                            <select id="selImage">
+                                <option value="Funky">Funky Fish</option>
+                                <option value="Star">Star Fish</option>
+                                <option value="Bubble">Simple Bubble</option>
+                                <option value="Ornament">Ornament</option>
+                            </select>
+                        </div>
 
-              <div>
-                <label for="selSize">Size: </label>
-                <select id="selSize">
-                  <option value="S">Small</option>
-                  <option value="M" selected>Medium</option>
-                  <option value="L">Large</option>
-                </select>
-              </div>
+                        <div>
+                            <label for="selSize">Size: </label>
+                            <select id="selSize">
+                                <option value="S">Small</option>
+                                <option value="M" selected>Medium</option>
+                                <option value="L">Large</option>
+                            </select>
+                        </div>
 
-              <div>
-                <label for="cStroke">Stroke colour: </label>
-                <input id="cStroke" type="color" />
-              </div>
+                        <div>
+                            <label for="cStroke">Stroke colour: </label>
+                            <input id="cStroke" type="color" />
+                        </div>
 
-              <div>
-                <label for="cFill">Fill colour: </label>
-                <input id="cFill" type="color" />
-              </div>
-            </fieldset>
-          </form>
-        </section>
-      </main>
+                        <div>
+                            <label for="cFill">Fill colour: </label>
+                            <input id="cFill" type="color" />
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
 
-      <footer>
-        <div class="inner">
-          <div class="socialMediaIcons">
-            <a rel="noreferrer" href="https://github.com/DanBuxton" title="GitHub" target="_blank">
-              <img src="/assets/images/social/github.svg" width="32" height="32" alt="Github" />
-              <span class="u-textScreenReader">Github link</span>
-            </a>
-            <a rel="noreferrer" href="https://www.linkedin.com/in/daniel-buxton-3a8b63140/" title="LinkedIn"
-              target="_blank">
-              <img src="/assets/images/social/linkedin-brands.svg" width="32" height="32" alt="Linkedin"
-                style="border-radius: 12px;" />
-              <span class="u-textScreenReader">LinkedIn link</span>
-            </a>
-            <a href="mailto:dan.buxton99@gmail.com" title="Email" target="_blank">
-              <img src="/assets/images/social/envelope.svg" width="32" height="32" alt="Email" />
-              <span class="u-textScreenReader">Email link</span>
-            </a>
-          </div>
-          <p>Copyright &copy; 2019 Daniel Buxton</p>
-        </div>
-      </footer>
+        <footer>
+            <div class="inner">
+                <div class="socialMediaIcons">
+                    <a rel="noreferrer" href="https://github.com/DanBuxton" title="GitHub" target="_blank">
+                        <img src="/assets/images/social/github.svg" width="32" height="32" alt="Github" />
+                        <span class="u-textScreenReader">Github link</span>
+                    </a>
+                    <a rel="noreferrer" href="https://www.linkedin.com/in/daniel-buxton-3a8b63140/" title="LinkedIn"
+                        target="_blank">
+                        <img src="/assets/images/social/linkedin-brands.svg" width="32" height="32" alt="Linkedin"
+                            style="border-radius: 12px;" />
+                        <span class="u-textScreenReader">LinkedIn link</span>
+                    </a>
+                    <a href="mailto:dan.buxton99@gmail.com" title="Email" target="_blank">
+                        <img src="/assets/images/social/envelope.svg" width="32" height="32" alt="Email" />
+                        <span class="u-textScreenReader">Email link</span>
+                    </a>
+                </div>
+                <p>Copyright &copy; 2019 Daniel Buxton</p>
+            </div>
+        </footer>
     </div>
 
     <script src="/assets/scripts/global.js"></script>
     <script src="/assets/scripts/tasks/fishTankGame.js"></script>
     <script>
-      let options = {
-        canvas: document.getElementById('cDrawing'),
-        image: document.getElementById('selImage'),
-        size: document.getElementById('selSize'),
-        fill: document.getElementById('cFill'),
-        stroke: document.getElementById('cStroke'),
-        clearButton: document.getElementById('btnClear'),
-        saveWebPButton: document.getElementById('btnSave'),
-        backgroundColor: '#00F'
-      }
-      let g = new FishTankGame(options);
-
-      options.canvas.addEventListener('click', draw);
-      options.clearButton.addEventListener('click', () => { g = new FishTankGame(options); console.clear(); });
-      document.getElementById('btnSavePng').addEventListener('click', savePng);
-      document.getElementById('btnSaveWebP').addEventListener('click', saveWebP);
-
-      function draw() {
-        if (this.getContext) {
-          let pos = {
-            x: event.x - this.offsetLeft,
-            y: event.y - this.offsetTop
-          }
-
-          g.draw(pos);
+        let options = {
+            canvas: document.getElementById('cDrawing'),
+            image: document.getElementById('selImage'),
+            size: document.getElementById('selSize'),
+            fill: document.getElementById('cFill'),
+            stroke: document.getElementById('cStroke'),
+            clearButton: document.getElementById('btnClear'),
+            saveWebPButton: document.getElementById('btnSave'),
+            backgroundColor: '#00F'
         }
-      }
+        let g = new FishTankGame(options);
 
-      function saveWebP() {
-        let newWindow = window.open();
-        newWindow.document.write("<img src='" +
-          options.canvas.toDataURL("image/WebP") + "' alt='from canvas'/>");
-      }
-      function savePng() {
-        let newWindow = window.open();
-        newWindow.document.write("<img src='" +
-          options.canvas.toDataURL("image/png") + "' alt='from canvas'/>");
-      }
+        options.canvas.addEventListener('click', draw);
+        options.clearButton.addEventListener('click', () => { g = new FishTankGame(options); console.clear(); });
+        document.getElementById('btnSavePng').addEventListener('click', savePng);
+        document.getElementById('btnSaveWebP').addEventListener('click', saveWebP);
+
+        function draw() {
+            if (this.getContext) {
+                let pos = {
+                    x: event.x - this.offsetLeft,
+                    y: event.y - this.offsetTop
+                }
+
+                g.draw(pos);
+            }
+        }
+
+        function saveWebP() {
+            let newWindow = window.open();
+            newWindow.document.write("<img src='" +
+                options.canvas.toDataURL("image/WebP") + "' alt='from canvas'/>");
+        }
+        function savePng() {
+            let newWindow = window.open();
+            newWindow.document.write("<img src='" +
+                options.canvas.toDataURL("image/png") + "' alt='from canvas'/>");
+        }
     </script>
-  </body>
+</body>
 
 </html>

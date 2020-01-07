@@ -93,6 +93,8 @@ body {
   background-color: rgb(204, 204, 204);
   padding: 0px;
   margin: 0;
+  /* margin-top: 300px;
+  margin-left: 300px; */
   width: 100%;
   font-family: 'Trebuchet MS', Helvetica, 'sans-serif';
 }
@@ -109,7 +111,8 @@ body {
 
 #headerMain>h1 {
   position: absolute;
-  top: -100%;
+  left: -100%;
+  color: red;
 }
 
 nav {
@@ -280,7 +283,7 @@ main .socialMediaIcons a {
 }
 
 @media only screen and (min-width: 400px) {
-  nav {
+  /* nav {
     display: block;
     grid-row: 2;
     color: white;
@@ -288,7 +291,7 @@ main .socialMediaIcons a {
 
   nav ul {
     max-width: 100%;
-  }
+  } */
 
   #secCert thead tr th:nth-child(3),
   #secCert tbody tr td:nth-child(3),
@@ -301,6 +304,21 @@ main .socialMediaIcons a {
     padding: 1rem;
     color: white;
     font-size: 2rem;
+  }
+
+  #secAbout {
+    display: grid;
+    width: 800px;
+    padding: 0px 5%;
+    margin: 0 auto;
+  }
+  
+  #secAbout header {
+    grid-column: 1 / span 5;
+  }
+  
+  #secAbout>p {
+    padding: 0px 50px;
   }
 }
 
@@ -315,7 +333,7 @@ main .socialMediaIcons a {
 }
 
 @media only screen and (min-width: 600px) {
-  .cssgrid #headerMain, nav, nav>ul {
+  /* .cssgrid #headerMain, nav, nav>ul {
     max-height: 100px;
   }
 
@@ -338,14 +356,14 @@ main .socialMediaIcons a {
     color: #000;
   }
 
-  .cssgrid a.active {
-    font-weight: bold;
-    background: inherit;
-  }
-
   .cssgrid nav a:hover {
     background: #ffffff33;
     color: #000;
+  } */
+
+  .cssgrid a.active {
+    font-weight: bold;
+    background: inherit;
   }
   
   input[type="button"]:hover, input[type="submit"]:hover, 
@@ -400,20 +418,6 @@ main .socialMediaIcons a {
 }
 
 @media only screen and (min-width: 1000px) {
-  #secAbout {
-    display: grid;
-    width: 800px;
-    padding: 0px 5%;
-    margin: 0 auto;
-  }
-
-  #secAbout header {
-    grid-column: 1 / span 5;
-  }
-
-  #secAbout>p {
-    padding: 0px 50px;
-  }
 
   #secEdu thead tr th:nth-child(1),
   #secEdu tbody tr td:nth-child(1) {
