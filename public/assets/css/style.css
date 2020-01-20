@@ -113,6 +113,7 @@ body {
   position: absolute;
   left: -100%;
   color: red;
+  display: none;
 }
 
 nav {
@@ -186,7 +187,7 @@ main a {
   font-weight: bold;
 }
 
-#imgOfMe {
+/* #imgOfMe {
   z-index: -1000;
 }
 
@@ -196,7 +197,7 @@ main a {
   width: 150px;
   height: 192px;
   border: 2px solid black;
-}
+} */
 
 main {
   padding: 0 0px 5px;
@@ -283,7 +284,7 @@ main .socialMediaIcons a {
 }
 
 @media only screen and (min-width: 400px) {
-  /* nav {
+  nav {
     display: block;
     grid-row: 2;
     color: white;
@@ -291,7 +292,7 @@ main .socialMediaIcons a {
 
   nav ul {
     max-width: 100%;
-  } */
+  }
 
   #secCert thead tr th:nth-child(3),
   #secCert tbody tr td:nth-child(3),
@@ -304,21 +305,6 @@ main .socialMediaIcons a {
     padding: 1rem;
     color: white;
     font-size: 2rem;
-  }
-
-  #secAbout {
-    display: grid;
-    width: 800px;
-    padding: 0px 5%;
-    margin: 0 auto;
-  }
-  
-  #secAbout header {
-    grid-column: 1 / span 5;
-  }
-  
-  #secAbout>p {
-    padding: 0px 50px;
   }
 }
 
@@ -333,7 +319,7 @@ main .socialMediaIcons a {
 }
 
 @media only screen and (min-width: 600px) {
-  /* .cssgrid #headerMain, nav, nav>ul {
+  .cssgrid #headerMain, nav, nav>ul {
     max-height: 100px;
   }
 
@@ -359,7 +345,7 @@ main .socialMediaIcons a {
   .cssgrid nav a:hover {
     background: #ffffff33;
     color: #000;
-  } */
+  }
 
   .cssgrid a.active {
     font-weight: bold;
@@ -415,6 +401,23 @@ main .socialMediaIcons a {
   #secEdu tbody tr td:nth-child(4) {
     display: table-cell;
   }
+}
+
+@media only screen and (min-width: 850px) {
+    #secAbout {
+      display: grid;
+      width: 800px;
+      padding: 0px 5%;
+      margin: 0 auto;
+    }
+    
+    #secAbout header {
+      grid-column: 1 / span 5;
+    }
+    
+    #secAbout>p {
+      padding: 0px 50px;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
