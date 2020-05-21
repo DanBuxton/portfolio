@@ -5,10 +5,10 @@ const CACHE_NAME = 'site-v1';
 const CACHE_URLS = ['/index.html',
   '/Education/',
   '/Portfolio/',
-  '/Portfolio/NumberGame/',
-  '/Portfolio/TreasureHuntGame/',
-  '/Portfolio/FishTankGame/',
-  '/Portfolio/Animation/',
+//   '/Portfolio/NumberGame/',
+//   '/Portfolio/TreasureHuntGame/',
+//   '/Portfolio/FishTankGame/',
+//   '/Portfolio/Animation/',
   '/Contact/',
   // CSS
   '/assets/css/style.css',
@@ -52,7 +52,7 @@ const CACHE_URLS = ['/index.html',
 ];
 
 //add all URLs to cache when installed
-self.addEventListener("install", function (event) {
+self.addEventListener("install", function(event) {
   console.log("Service worker installed");
   event.waitUntil(
     //create and open cache
@@ -65,7 +65,7 @@ self.addEventListener("install", function (event) {
   );
 });
 //On activate update the cache with the new version and clean out old
-self.addEventListener('activate', function (event) {
+self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
       return Promise.all(
@@ -79,9 +79,9 @@ self.addEventListener('activate', function (event) {
   );
 });
 //user has navigated to page - fetch required assets
-self.addEventListener("fetch", function (event) {
+self.addEventListener("fetch", function(event) {
   event.respondWith(
-    caches.match(event.request).then(function (response) {
+    caches.match(event.request).then(function(response) {
       //check whether asset is in cache
       if (response) {
         //asset in cache, so return it
