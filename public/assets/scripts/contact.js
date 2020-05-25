@@ -1,4 +1,25 @@
-// 'use strict';
+'use strict';
+
+if ('fetch')
+  fetch('/firebase-config.json')
+    .then(prom => prom.json())
+    .then(j => firebase.initializeApp(j))
+    .catch(err => console.log(err));
+else {
+  const req = new XMLHttpRequest();
+  req.open('get', '/firebase-config.json', true);
+  req.send();
+
+  req.onreadystatechange = function () {
+    if (req.readyState === 4) {
+      if (req.status === 200) {
+        firebase.initializeApp(JSON.parse(req.responseText));
+      } else {
+        console.log('Error:', req.status + ' - ' + req.responseText);
+      }
+    }
+  }
+}
 
 let form = document.getElementsByTagName('form')[0];
 form.addEventListener('submit', validateForm);
@@ -13,7 +34,25 @@ const email = document.getElementsByName('email')[0];
 const message = document.getElementsByName('message')[0];
 
 function validateForm(e) {
-  console.log('submit type', e.type == 'submit');
+  e.preventDefault();
+
+  function firebasePush(input) {
+    const date = new Date();
+    const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    firebase.firestore().collection("contact").doc('' + date.valueOf()).set(
+      {
+        name: input.name,
+        email: input.email,
+        message: input.message,
+        date: date.toUTCString()
+      }
+    ).catch(function (error) {
+      console.error("Error writing document: ", error.error);
+      document.getElementById('errors').innerHTML = '<ul><li>Unable to submit message</li></ul>';
+      document.getElementById('errors').style.display = 'block';
+    });
+    form.reset();
+  }
 
   results = [];
   errors = [];
@@ -32,13 +71,17 @@ function validateForm(e) {
     document.getElementById('errors').innerHTML = str;
     document.getElementById('errors').style.display = 'block';
     resize();
+  } else {
+    document.getElementById('errors').innerHTML = '';
+    document.getElementById('errors').style.display = 'none';
+
+    firebasePush(
+      {
+        name: name.value,
+        email: email.value,
+        message: message.value
+      });
   }
-
-  console.log('errors', results.includes(false) ? errors : "None");
-  console.log('return', !results.includes(false));
-
-  if (e.type == 'submit')
-    e.returnValue = !results.includes(false);
 }
 
 function validateName() {
