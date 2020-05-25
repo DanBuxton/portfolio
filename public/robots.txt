@@ -1,4 +1,4 @@
 
 User-agent: *
 Allow: /
-Ignore: index_1.html
+Ignore: /index_1.html
