@@ -1,3 +1,11 @@
-.firebase
+/.firebase
 
-firebase.json
+/firebase.json
+/firebase-debug.log
+
+/public/*-config.json
+
+# /![template]*-config.json
+# /![*-config template].json
+
+!/public/template-*.json
