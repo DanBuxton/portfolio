@@ -2,7 +2,9 @@
 
 //set up cache name and files to add to it
 const CACHE_NAME = 'site-v1';
-const CACHE_URLS = ['/index.html',
+const CACHE_URLS = [
+  // Pages
+  '/index.html',
   '/Education/',
   '/Portfolio/',
 //   '/Portfolio/NumberGame/',
@@ -10,7 +12,7 @@ const CACHE_URLS = ['/index.html',
 //   '/Portfolio/FishTankGame/',
 //   '/Portfolio/Animation/',
   '/Contact/',
-  // CSS
+  // Style
   '/assets/css/style.css',
   '/assets/css/portfolio.css',
   '/assets/css/contact.css',
@@ -18,28 +20,31 @@ const CACHE_URLS = ['/index.html',
   '/assets/css/treasureHuntGame.css',
   '/assets/css/fishTankGame.css',
   '/assets/css/animation.css',
-  // FONT
+  // Font
   '/assets/fonts/roboto-mono-regular.eot',
   '/assets/fonts/roboto-mono-regular.svg',
   '/assets/fonts/roboto-mono-regular.ttf',
   '/assets/fonts/roboto-mono-regular.woff',
   '/assets/fonts/roboto-mono-regular.woff2',
-  // IMG
+  // Images
   '/assets/images/CloseUpOfMe.webp',
   '/assets/images/CloseUpOfMe.jpg',
-  '/assets/images/react-logo.svg',
-  '/assets/images/angular-logo.svg',
-  '/assets/images/vue-logo.svg',
   '/assets/images/logo/Logo_White.png',
   '/assets/images/logo/Logo_Black.png',
   '/assets/images/logo/Logo_White-Black.jpg',
-  '/assets/images/social/github.svg',
-  '/assets/images/social/linkedin-brands.svg',
-  '/assets/images/social/envelope.svg',
+  '/assets/images/social/github-black.svg',
+  '/assets/images/social/github-white.svg',
+  '/assets/images/social/linkedin-black.svg',
+  '/assets/images/social/linkedin-white.svg',
+  '/assets/images/social/envelope-black.svg',
+  '/assets/images/social/envelope-white.svg',
   '/assets/images/cert/sdf.png',
   '/assets/images/cert/df.png',
   '/assets/images/skills/html5_css3_js.png',
-  // JS
+  '/assets/images/skills/react-logo.svg',
+  '/assets/images/skills/angular-logo.svg',
+  '/assets/images/skills/vue-logo.svg',
+  // JavaScript
   '/assets/scripts/global.js',
   '/assets/scripts/contact.js',
   '/assets/scripts/modernizr.js',

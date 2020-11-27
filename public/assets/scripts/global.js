@@ -2,7 +2,7 @@
 
 //check whether browser support service workers
 /**/
-if (location.port == '80' || location.port == '443')
+if (location.origin.match(new RegExp("portfolio-djb", "i")) != null)
     if ('serviceWorker' in navigator) {
         //wait until page loaded to avoid delaying rendering
         window.addEventListener('load', function () {
